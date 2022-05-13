@@ -18,19 +18,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main);
 
         //связывание элементов по id
-        TextView nameProc = findViewById(R.id.textProcNameTotal);
-        TextView descProc = findViewById(R.id.textProcDescTotal);
-        ImageView imageProc = findViewById(R.id.imageProcTotal);
-        TextView nameOhl = findViewById(R.id.textOhlNameTotal);
-        TextView descOhl = findViewById(R.id.textOhlDescTotal);
-        ImageView imageOhl = findViewById(R.id.imageOhlTotal);
-        TextView nameMom = findViewById(R.id.textMomNameTotal);
-        TextView descMom = findViewById(R.id.textMomDescTotal);
-        ImageView imageMom = findViewById(R.id.imageMomTotal);
-        Button total = findViewById(R.id.buttonTotal);
+        ImageView imProc = findViewById(R.id.imageProcTotal);
+        ImageView imMom = findViewById(R.id.imageMomTotal);
+        ImageView imOhl = findViewById(R.id.imageOhlTotal);
+        TextView txtProcName = findViewById(R.id.textProcNameTotal);
+        TextView txtOhlName = findViewById(R.id.textOhlNameTotal);
+        TextView txtMomName = findViewById(R.id.textMomNameTotal);
+        TextView txtProcDesc = findViewById(R.id.textProcDescTotal);
+        TextView txtOhlDesc = findViewById(R.id.textOhlDescTotal);
+        TextView txtMomDesc = findViewById(R.id.textMomDescTotal);
+        TextView txtTotal = findViewById(R.id.txtTotal);
+        Button btnTotal = findViewById(R.id.buttonTotal);
+        Button btnPlusProc = findViewById(R.id.btnPlusProc);
+        Button btnPlusOhl = findViewById(R.id.btnPlusOhl);
+        Button btnPlusMom = findViewById(R.id.btnPlusMom);
+
 
         //обработка нажатия на кнопку
-        total.setOnClickListener(new View.OnClickListener() {
+        btnTotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Data data = new Data();

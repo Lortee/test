@@ -14,12 +14,10 @@ import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "acc.db"; // название бд
-    public static final String TABLE_NAME = "acc"; // название таблицы в бд
+    private static String DB_PATH; //полный путь к базе данных
+    private static String DB_NAME = "access.db"; // название бд
     private static final int SCHEMA = 1; // версия базы данных
-    private static String DB_PATH;
-    //удаление таблицы
-    public static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
+    public static final String TABLE = "proc"; // название таблицы в бд
 
     // названия столбцов
     public static final String COLUMN_ID = "_id"; //id
@@ -30,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_POWER = "power"; //мощность
     private Context myContext;
 
+    //конструктор
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, SCHEMA);
         this.myContext=context;
@@ -44,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //копирование бд из папки assets
-    void create_db(){
+    public void create_db(){
 
         File file = new File(DB_PATH);
         if (!file.exists()) {
@@ -69,7 +68,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //метод открытия базы данных
     public SQLiteDatabase open()throws SQLException {
-
         return SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READWRITE);
     }
 }

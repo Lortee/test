@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -20,18 +21,30 @@ import java.util.ArrayList;
 public class ChoiceActivity extends AppCompatActivity {
 
     ArrayList<Recycler> recyclers = new ArrayList<Recycler>();
-
+    /*ListView userList;
     DatabaseHelper databaseHelper;
     SQLiteDatabase db;
-    Cursor cursor;
-    SimpleCursorAdapter userAdapter;
+    Cursor userCursor;
+    SimpleCursorAdapter userAdapter;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choice);
 
+        ListView listView = findViewById(R.id.list);
+        ImageView imageView = findViewById(R.id.im);
+        Button btnDesc = findViewById(R.id.btnDesc);
+        Button btnPlus = findViewById(R.id.btnPlus);
+        TextView txtDesc = findViewById(R.id.txtDesc);
+        TextView txtName = findViewById(R.id.txtName);
+
+
+        /*userList = findViewById(R.id.list);
+
         databaseHelper = new DatabaseHelper(getApplicationContext());
+        // создаем базу данных
+        databaseHelper.create_db();*/
 
         // начальная инициализация списка
         setInitialData();
@@ -45,11 +58,24 @@ public class ChoiceActivity extends AppCompatActivity {
 
 
     private void setInitialData(){
-        db = databaseHelper.getReadableDatabase();
-        /*cursor = db.rawQuery("select * from " + DatabaseHelper.TABLE_NAME, null);
+        /*db = databaseHelper.open();
+        userCursor = db.rawQuery("select * from " + DatabaseHelper.TABLE, null);
         String[] headers = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_SDESC};
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-               cursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);*/
+                userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
+        userList.setAdapter(userAdapter);*/
+
+
+
         recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
+
+
     }
 }
