@@ -47,7 +47,7 @@ public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ViewH
 
         ViewHolder(View view) {
             super(view);
-            imageView = view.findViewById(R.id.image);
+            imageView = view.findViewById(R.id.im);
             nameView = view.findViewById(R.id.txtName);
             sDescView = view.findViewById(R.id.txtDesc);
         }

@@ -15,22 +15,22 @@ import java.io.OutputStream;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "acc.db"; // название бд
-    private static final String TABLE_NAME = "acc"; // название таблицы в бд
+    public static final String TABLE_NAME = "acc"; // название таблицы в бд
     private static final int SCHEMA = 1; // версия базы данных
     private static String DB_PATH;
     //удаление таблицы
     public static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     // названия столбцов
-    private static final String COLUMN_ID = "_id"; //id
-    private static final String COLUMN_NAME = "name"; //название
-    private static final String COLUMN_SDESC = "sDesc"; //краткое описание
-    private static final String COLUMN_DESC = "desc"; //описание
-    private static final String COLUMN_SOCK = "sock"; //сокет
-    private static final String COLUMN_POWER = "power"; //мощность
+    public static final String COLUMN_ID = "_id"; //id
+    public static final String COLUMN_NAME = "name"; //название
+    public static final String COLUMN_SDESC = "sDesc"; //краткое описание
+    public static final String COLUMN_DESC = "desc"; //описание
+    public static final String COLUMN_SOCK = "sock"; //сокет
+    public static final String COLUMN_POWER = "power"; //мощность
     private Context myContext;
 
-    DatabaseHelper(Context context) {
+    public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, SCHEMA);
         this.myContext=context;
         DB_PATH =context.getFilesDir().getPath() + DB_NAME;
