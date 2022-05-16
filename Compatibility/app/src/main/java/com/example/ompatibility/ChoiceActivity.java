@@ -21,11 +21,11 @@ import java.util.ArrayList;
 public class ChoiceActivity extends AppCompatActivity {
 
     ArrayList<Recycler> recyclers = new ArrayList<Recycler>();
-    /*ListView userList;
+    ListView userList;
     DatabaseHelper databaseHelper;
     SQLiteDatabase db;
     Cursor userCursor;
-    SimpleCursorAdapter userAdapter;*/
+    SimpleCursorAdapter userAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,12 @@ public class ChoiceActivity extends AppCompatActivity {
         TextView txtName = findViewById(R.id.txtName);
 
 
-        /*userList = findViewById(R.id.list);
+        userList = findViewById(R.id.list);
 
         databaseHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
-        databaseHelper.create_db();*/
+        databaseHelper.create_db();
+
 
         // начальная инициализация списка
         setInitialData();
@@ -58,12 +59,14 @@ public class ChoiceActivity extends AppCompatActivity {
 
 
     private void setInitialData(){
-        /*db = databaseHelper.open();
+        db = databaseHelper.open();
         userCursor = db.rawQuery("select * from " + DatabaseHelper.TABLE, null);
-        String[] headers = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_SDESC};
-        userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-                userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
-        userList.setAdapter(userAdapter);*/
+        String[] from = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_SDESC};
+        int[] to = new int[] {R.id.txtName, R.id.txtDesc, R.id.im};
+        userAdapter = new SimpleCursorAdapter(this, R.layout.recycler, userCursor, from, to);
+        userList.setAdapter(userAdapter);
+
+        registerForContextMenu(userList);
 
 
 

@@ -7,4 +7,8 @@ public class Data {
     public int powerProc;//мощность процессора
     public int powerOhl;//мощность кулера
 
+    
+
+
+
 }
