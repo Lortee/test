@@ -21,18 +21,18 @@ import java.util.ArrayList;
 public class ChoiceActivity extends AppCompatActivity {
 
     ArrayList<Recycler> recyclers = new ArrayList<Recycler>();
-    ListView userList;
+    /*ListView userList;
     DatabaseHelper databaseHelper;
     SQLiteDatabase db;
     Cursor userCursor;
-    SimpleCursorAdapter userAdapter;
+    SimpleCursorAdapter userAdapter;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choice);
 
-        ListView listView = findViewById(R.id.list);
+        //ListView listView = findViewById(R.id.list);
         ImageView imageView = findViewById(R.id.im);
         Button btnDesc = findViewById(R.id.btnDesc);
         Button btnPlus = findViewById(R.id.btnPlus);
@@ -40,11 +40,11 @@ public class ChoiceActivity extends AppCompatActivity {
         TextView txtName = findViewById(R.id.txtName);
 
 
-        userList = findViewById(R.id.list);
+        //userList = findViewById(R.id.list);
 
-        databaseHelper = new DatabaseHelper(getApplicationContext());
+        //databaseHelper = new DatabaseHelper(getApplicationContext());
         // создаем базу данных
-        databaseHelper.create_db();
+        //databaseHelper.create_db();
 
 
         // начальная инициализация списка
@@ -59,22 +59,17 @@ public class ChoiceActivity extends AppCompatActivity {
 
 
     private void setInitialData(){
-        db = databaseHelper.open();
+        /*db = databaseHelper.open();
         userCursor = db.rawQuery("select * from " + DatabaseHelper.TABLE, null);
         String[] from = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_SDESC};
         int[] to = new int[] {R.id.txtName, R.id.txtDesc, R.id.im};
         userAdapter = new SimpleCursorAdapter(this, R.layout.recycler, userCursor, from, to);
         userList.setAdapter(userAdapter);
 
-        registerForContextMenu(userList);
+        registerForContextMenu(userList);*/
 
 
 
-        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
-        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
-        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
-        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
-        recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
         recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
         recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));
         recyclers.add(new Recycler ("название", "краткое описание", R.drawable.r));

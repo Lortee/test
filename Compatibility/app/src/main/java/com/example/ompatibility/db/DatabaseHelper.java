@@ -15,9 +15,9 @@ import java.io.OutputStream;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String DB_PATH; //полный путь к базе данных
-    private static String DB_NAME = "access.db"; // название бд
+    private static final String DB_NAME = "access.db"; // название бд
     private static final int SCHEMA = 1; // версия базы данных
-    public static final String TABLE = "proc"; // название таблицы в бд
+    public final String TABLE = "proc"; // название таблицы в бд
 
     // названия столбцов
     public static final String COLUMN_ID = "_id"; //id
@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_DESC = "desc"; //описание
     public static final String COLUMN_SOCK = "sock"; //сокет
     public static final String COLUMN_POWER = "power"; //мощность
-    private Context myContext;
+    private final Context myContext;
 
     //конструктор
     public DatabaseHelper(Context context) {
@@ -67,7 +67,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //метод открытия базы данных
-    public SQLiteDatabase open()throws SQLException {
+    public SQLiteDatabase open() throws SQLException {
         return SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READWRITE);
     }
+
+
 }
