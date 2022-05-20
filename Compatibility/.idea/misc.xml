@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32037037037037036" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/drawable/ic_launcher_background.xml" value="0.32037037037037036" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/choice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/choice1.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/choicemom.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/choiceohl.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/choiceproc.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/choise.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/description.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Compatibility/app/src/main/res/layout/item.xml" value="0.36666666666666664" />

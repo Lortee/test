@@ -35,7 +35,7 @@
         android:paddingStart="5dp"
         android:textAllCaps="false"
         android:textColor="@color/fontUp"
-        android:textSize="16sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonBackDesc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

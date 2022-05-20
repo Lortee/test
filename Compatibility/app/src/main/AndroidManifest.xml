@@ -19,9 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChoiceActivity" />
-        <activity android:name=".DescActivity" />
+        <activity android:name=".ChoiceActivityProc" />
+        <activity android:name=".DescActivityProc" />
         <activity android:name=".TotalActivity" />
+        <activity android:name=".ChoiceActivityMom" />
+        <activity android:name=".ChoiceActivityOhl" />
+        <activity android:name=".DescActivityOhl" />
+        <activity android:name=".DescActivityMom" />
+        <activity android:name=".MainActivity2" />
     </application>
 
 </manifest>

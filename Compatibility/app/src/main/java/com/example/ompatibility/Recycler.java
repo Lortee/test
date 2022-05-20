@@ -6,6 +6,7 @@ public class Recycler {
     private String sDesc; //краткое описание
     private int imageResource; //ссылка на ресурс изображения
 
+
     //конструктор
     public Recycler(String name, String sDesc, int imRes) {
         this.name = name;

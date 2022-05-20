@@ -5,6 +5,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.view.View;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,7 +18,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static String DB_PATH; //полный путь к базе данных
     private static final String DB_NAME = "access.db"; // название бд
     private static final int SCHEMA = 1; // версия базы данных
-    public final String TABLE = "proc"; // название таблицы в бд
+    public static final String TABLE_PROC = "proc"; // название таблицы1 в бд
+    public static final String TABLE_OHL = "ohl"; // название таблицы2 в бд
+    public static final String TABLE_MOM = "mom"; // название таблицы3 в бд
 
     // названия столбцов
     public static final String COLUMN_ID = "_id"; //id
@@ -26,7 +29,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_DESC = "desc"; //описание
     public static final String COLUMN_SOCK = "sock"; //сокет
     public static final String COLUMN_POWER = "power"; //мощность
-    private final Context myContext;
+    public final Context myContext;
+
+    public static final String COLUMN_PROCSOCK = "procSock"; //id
+    public static final String COLUMN_PROCPOWER = "procPower"; //id
+    public static final String COLUMN_OHLPOWER = "ohlPower"; //id
+    public static final String COLUMN_MOMSOCK = "momSock"; //id
+
+
+
 
     //конструктор
     public DatabaseHelper(Context context) {
@@ -34,6 +45,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.myContext=context;
         DB_PATH =context.getFilesDir().getPath() + DB_NAME;
     }
+
+
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -43,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //копирование бд из папки assets
-    public void create_db(){
+    public  void create_db(){
 
         File file = new File(DB_PATH);
         if (!file.exists()) {
