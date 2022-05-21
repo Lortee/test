@@ -20,7 +20,6 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.ompatibility.db.DatabaseHelper;
-import com.example.ompatibility.db.DatabaseHelperData;
 
 public class MyDialogFragment extends DialogFragment {
 
@@ -32,13 +31,13 @@ public class MyDialogFragment extends DialogFragment {
     Context context;
 
 
-
+    //при создании всплывающего окна
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(title);
-        builder.setMessage(message);
+        builder.setTitle(title); //устанавливаем главный текст
+        builder.setMessage(message); //устанавливаем сообщение
 
 
         //обработка нажатия на кнопку "сброс"
@@ -47,10 +46,11 @@ public class MyDialogFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-
+                //передаем интент
                 Intent intent = new Intent(getActivity(), MainActivity.class);
-                intent.putExtra("int", 2);
+                startActivity(intent);
 
+                //закрываем всплывающее окно
                 dialogInterface.cancel();
             }
         });
@@ -60,6 +60,7 @@ public class MyDialogFragment extends DialogFragment {
         builder.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                //закрываем всплывающее окно
                 dialogInterface.cancel();
             }
         });

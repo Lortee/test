@@ -31,21 +31,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_POWER = "power"; //мощность
     public final Context myContext;
 
-    public static final String COLUMN_PROCSOCK = "procSock"; //id
-    public static final String COLUMN_PROCPOWER = "procPower"; //id
-    public static final String COLUMN_OHLPOWER = "ohlPower"; //id
-    public static final String COLUMN_MOMSOCK = "momSock"; //id
-
-
-
 
     //конструктор
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, SCHEMA);
         this.myContext=context;
+        //получение пути к бд
         DB_PATH =context.getFilesDir().getPath() + DB_NAME;
     }
-
 
 
 

@@ -2,6 +2,7 @@ package com.example.ompatibility;
 
 public class Recycler {
 
+    //поля для recycler
     private String name; //имя
     private String sDesc; //краткое описание
     private int imageResource; //ссылка на ресурс изображения

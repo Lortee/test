@@ -48,7 +48,7 @@ public class ChoiceActivityOhl extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        //вешаем слушателя на кнопку возврата на главный экран
+        //обрабатываем нажатие на кнопку возврата на главный экран
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,9 +71,6 @@ public class ChoiceActivityOhl extends AppCompatActivity {
 
         //список столбцов
         String[] projection = {DatabaseHelper.COLUMN_NAME};
-
-        //String selection = DatabaseHelper.COLUMN_ID + "=?";
-        //String[] selectionArgs = {"1"};
 
         // Делаем запрос
         Cursor cursor = db.query(
@@ -107,18 +104,16 @@ public class ChoiceActivityOhl extends AppCompatActivity {
         cursor1.moveToFirst();
 
         //считывание данных из бд в recyclerView
-
-
         int nameColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
         int sDescColumnIndex = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
         String currentName = cursor.getString(nameColumnIndex);
         String currentSDesc = cursor1.getString(sDescColumnIndex);
-
         recyclers.add(new Recycler(currentName, currentSDesc, R.drawable.deep200t));
 
 
         cursor.moveToNext();
         cursor1.moveToNext();
+
         int nameColumnIndex2 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
         int sDescColumnIndex2 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
         String currentName2 = cursor.getString(nameColumnIndex2);
@@ -154,7 +149,6 @@ public class ChoiceActivityOhl extends AppCompatActivity {
         String currentName5 = cursor.getString(nameColumnIndex5);
         String currentSDesc5 = cursor1.getString(sDescColumnIndex5);
         recyclers.add(new Recycler(currentName5, currentSDesc5, R.drawable.assassin3));
-
 
         cursor.close();
         cursor1.close();;

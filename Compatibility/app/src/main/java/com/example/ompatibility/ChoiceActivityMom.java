@@ -38,16 +38,16 @@ public class ChoiceActivityMom extends AppCompatActivity {
 
 
 
-        // начальная инициализация списка
+        //начальная инициализация списка
         setInitialData();
         RecyclerView recyclerView = findViewById(R.id.listmom);
-        // создаем адаптер
+        //создаем адаптер
         RecyclerAdapterMom adapter = new RecyclerAdapterMom(this, recyclers);
-        // устанавливаем для списка адаптер
+        //устанавливаем для списка адаптер
         recyclerView.setAdapter(adapter);
 
 
-        //вешаем слушателя на кнопку возврата на главный экран
+        //обрабатываем нажатие на кнопку возврата на главный экран
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,15 +63,11 @@ public class ChoiceActivityMom extends AppCompatActivity {
     private void setInitialData(){
         //создадим и откроем для чтения базу данных
         DatabaseHelper mDbHelper = new DatabaseHelper(this);
-        //SQLiteDatabase db = mDbHelper.getReadableDatabase();
         mDbHelper.create_db();
         db = mDbHelper.open();
 
         //список столбцов
         String[] projection = {DatabaseHelper.COLUMN_NAME};
-
-        String selection = DatabaseHelper.COLUMN_ID + "=?";
-        String[] selectionArgs = {"1"};
 
         // Делаем запрос
         Cursor cursor = db.query(
@@ -83,7 +79,6 @@ public class ChoiceActivityMom extends AppCompatActivity {
                 null,
                 null,
                 null);
-
         //перемещаем курсор на первую строку
         cursor.moveToFirst();
 
@@ -100,24 +95,20 @@ public class ChoiceActivityMom extends AppCompatActivity {
                 null,
                 null,
                 null);
-
         //перемещаем курсор на первую строку
         cursor1.moveToFirst();
 
-
         //считывание данных из бд в recyclerView
-
-
         int nameColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
         int sDescColumnIndex = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
         String currentName = cursor.getString(nameColumnIndex);
         String currentSDesc = cursor1.getString(sDescColumnIndex);
-
         recyclers.add(new Recycler(currentName, currentSDesc, R.drawable.h410m));
 
 
         cursor.moveToNext();
         cursor1.moveToNext();
+
         int nameColumnIndex2 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
         int sDescColumnIndex2 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
         String currentName2 = cursor.getString(nameColumnIndex2);

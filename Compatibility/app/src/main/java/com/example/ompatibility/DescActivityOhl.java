@@ -37,6 +37,7 @@ public class DescActivityOhl extends AppCompatActivity {
         });
 
 
+        //получаем intent
         Bundle arg = getIntent().getExtras();
         int value = arg.getInt("ohl1");
 
@@ -49,6 +50,7 @@ public class DescActivityOhl extends AppCompatActivity {
         switch (value){
             case 1:
 
+            //получаем значения для передачи в элементы
                 //список столбцов
                 String[] projectionName1 = {DatabaseHelper.COLUMN_NAME};
                 String[] projectionSDesc1 = {DatabaseHelper.COLUMN_SDESC};
@@ -67,6 +69,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorName.moveToFirst();
 
                 // Делаем запрос
@@ -79,6 +82,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorSDesc.moveToFirst();
 
                 // Делаем запрос
@@ -91,6 +95,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorDesc.moveToFirst();
 
                 // Используем индекс для получения строки или числа
@@ -102,11 +107,13 @@ public class DescActivityOhl extends AppCompatActivity {
                 String currentSDesc = cursorSDesc.getString(sDescColumnIndex);
                 String currentDesc = cursorDesc.getString(descColumnIndex);
 
+                //передаем значения в элементы
                 txtName.setText(currentName);
                 txtSDesc.setText(currentSDesc);
                 txtDesc.setText(currentDesc);
                 imImage.setImageResource(R.drawable.deep200t);
 
+                //закрываем курсоры
                 cursorName.close();
                 cursorSDesc.close();
                 cursorDesc.close();
@@ -121,6 +128,7 @@ public class DescActivityOhl extends AppCompatActivity {
                 String[] projectionSDesc2 = {DatabaseHelper.COLUMN_SDESC};
                 String[] projectionDesc2 = {DatabaseHelper.COLUMN_DESC};
 
+                //значение
                 String selection2 = DatabaseHelper.COLUMN_ID + "=?";
                 String[] selectionArgs2 = {"2"};
 
@@ -134,6 +142,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorName2.moveToFirst();
 
                 // Делаем запрос
@@ -146,6 +155,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorSDesc2.moveToFirst();
 
                 // Делаем запрос
@@ -158,6 +168,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorDesc2.moveToFirst();
 
                 // Используем индекс для получения строки или числа
@@ -169,11 +180,13 @@ public class DescActivityOhl extends AppCompatActivity {
                 String currentSDesc2 = cursorSDesc2.getString(sDescColumnIndex2);
                 String currentDesc2 = cursorDesc2.getString(descColumnIndex2);
 
+                //передаем значения в элементы
                 txtName.setText(currentName2);
                 txtSDesc.setText(currentSDesc2);
                 txtDesc.setText(currentDesc2);
                 imImage.setImageResource(R.drawable.i250);
 
+                //закрываем курсоры
                 cursorName2.close();
                 cursorSDesc2.close();
                 cursorDesc2.close();
@@ -182,11 +195,14 @@ public class DescActivityOhl extends AppCompatActivity {
 
 
             case 3:
+
+            //получаем значения для передачи в элементы
                 //список столбцов
                 String[] projectionName3 = {DatabaseHelper.COLUMN_NAME};
                 String[] projectionSDesc3 = {DatabaseHelper.COLUMN_SDESC};
                 String[] projectionDesc3 = {DatabaseHelper.COLUMN_DESC};
 
+                //значение
                 String selection3 = DatabaseHelper.COLUMN_ID + "=?";
                 String[] selectionArgs3 = {"3"};
 
@@ -200,6 +216,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorName3.moveToFirst();
 
                 // Делаем запрос
@@ -212,6 +229,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorSDesc3.moveToFirst();
 
                 // Делаем запрос
@@ -224,6 +242,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorDesc3.moveToFirst();
 
                 // Используем индекс для получения строки или числа
@@ -235,11 +254,13 @@ public class DescActivityOhl extends AppCompatActivity {
                 String currentSDesc3 = cursorSDesc3.getString(sDescColumnIndex3);
                 String currentDesc3 = cursorDesc3.getString(descColumnIndex3);
 
+                //передаем значения в элементы
                 txtName.setText(currentName3);
                 txtSDesc.setText(currentSDesc3);
                 txtDesc.setText(currentDesc3);
                 imImage.setImageResource(R.drawable.z50);
 
+                //закрываем курсоры
                 cursorName3.close();
                 cursorSDesc3.close();
                 cursorDesc3.close();
@@ -248,11 +269,14 @@ public class DescActivityOhl extends AppCompatActivity {
 
 
             case 4:
+
+            //получаем значения для передачи в элементы
                 //список столбцов
                 String[] projectionName4 = {DatabaseHelper.COLUMN_NAME};
                 String[] projectionSDesc4 = {DatabaseHelper.COLUMN_SDESC};
                 String[] projectionDesc4 = {DatabaseHelper.COLUMN_DESC};
 
+                //значение
                 String selection4 = DatabaseHelper.COLUMN_ID + "=?";
                 String[] selectionArgs4 = {"4"};
 
@@ -266,6 +290,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorName4.moveToFirst();
 
                 // Делаем запрос
@@ -278,6 +303,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorSDesc4.moveToFirst();
 
                 // Делаем запрос
@@ -290,6 +316,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorDesc4.moveToFirst();
 
                 // Используем индекс для получения строки или числа
@@ -301,11 +328,13 @@ public class DescActivityOhl extends AppCompatActivity {
                 String currentSDesc4 = cursorSDesc4.getString(sDescColumnIndex4);
                 String currentDesc4 = cursorDesc4.getString(descColumnIndex4);
 
+                //передаем значения в элементы
                 txtName.setText(currentName4);
                 txtSDesc.setText(currentSDesc4);
                 txtDesc.setText(currentDesc4);
                 imImage.setImageResource(R.drawable.deep400);
 
+                //закрываем курсоры
                 cursorName4.close();
                 cursorSDesc4.close();
                 cursorDesc4.close();
@@ -314,11 +343,14 @@ public class DescActivityOhl extends AppCompatActivity {
 
 
             case 5:
+
+            //получаем значения для передачи в элементы
                 //список столбцов
                 String[] projectionName5 = {DatabaseHelper.COLUMN_NAME};
                 String[] projectionSDesc5 = {DatabaseHelper.COLUMN_SDESC};
                 String[] projectionDesc5 = {DatabaseHelper.COLUMN_DESC};
 
+                //значение
                 String selection5 = DatabaseHelper.COLUMN_ID + "=?";
                 String[] selectionArgs5 = {"5"};
 
@@ -332,6 +364,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorName5.moveToFirst();
 
                 // Делаем запрос
@@ -344,6 +377,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorSDesc5.moveToFirst();
 
                 // Делаем запрос
@@ -356,6 +390,7 @@ public class DescActivityOhl extends AppCompatActivity {
                         null,
                         null,
                         null);
+                //ставим курсор на первую строку
                 cursorDesc5.moveToFirst();
 
                 // Используем индекс для получения строки или числа
@@ -367,18 +402,20 @@ public class DescActivityOhl extends AppCompatActivity {
                 String currentSDesc5 = cursorSDesc5.getString(sDescColumnIndex5);
                 String currentDesc5 = cursorDesc5.getString(descColumnIndex5);
 
+                //передаем значения в элементы
                 txtName.setText(currentName5);
                 txtSDesc.setText(currentSDesc5);
                 txtDesc.setText(currentDesc5);
                 imImage.setImageResource(R.drawable.assassin3);
 
+                //закрываем курсоры
                 cursorName5.close();
                 cursorSDesc5.close();
                 cursorDesc5.close();
 
                 break;
         }
-
+        //закрываем бд
         db.close();
 
     }

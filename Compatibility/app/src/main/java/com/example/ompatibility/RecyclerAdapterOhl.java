@@ -21,6 +21,7 @@ public class RecyclerAdapterOhl extends RecyclerView.Adapter<RecyclerAdapterOhl.
     private final LayoutInflater inflater;
     private final List<Recycler> recyclers;
 
+    //конструктор
     RecyclerAdapterOhl(Context context, List<Recycler> recyclers) {
         this.recyclers = recyclers;
         this.inflater = LayoutInflater.from(context);
@@ -40,6 +41,7 @@ public class RecyclerAdapterOhl extends RecyclerView.Adapter<RecyclerAdapterOhl.
         holder.nameView.setText(recycler.getName());
         holder.sDescView.setText(recycler.getsDesc());
 
+        //обрабатываем нажатие на кнопку "описание"
         final Context context = holder.button.getContext();
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,12 +101,13 @@ public class RecyclerAdapterOhl extends RecyclerView.Adapter<RecyclerAdapterOhl.
 
                         break;
                 }
+                //запускаем экран
                 context.startActivity(intent);
             }
         });
 
 
-
+        //обрабатываем нажатие на кнопку "+"
         final Context context2 = holder.buttonPlus.getContext();
         holder.buttonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +161,7 @@ public class RecyclerAdapterOhl extends RecyclerView.Adapter<RecyclerAdapterOhl.
 
                         break;
                 }
+                //запускаем экран
                 context2.startActivity(intent);
             }
         });
@@ -179,6 +183,7 @@ public class RecyclerAdapterOhl extends RecyclerView.Adapter<RecyclerAdapterOhl.
 
         ViewHolder(View view) {
             super(view);
+            //связываем элементы по id
             imageView = view.findViewById(R.id.im);
             nameView = view.findViewById(R.id.txtName);
             sDescView = view.findViewById(R.id.txtDesc);

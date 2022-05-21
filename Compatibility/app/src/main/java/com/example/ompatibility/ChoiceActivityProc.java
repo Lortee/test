@@ -71,8 +71,6 @@ public class ChoiceActivityProc extends AppCompatActivity {
         //список столбцов
         String[] projection = {DatabaseHelper.COLUMN_NAME};
 
-        //String selection = DatabaseHelper.COLUMN_ID + "=?";
-        //String[] selectionArgs = {"1"};
 
         // Делаем запрос
         Cursor cursor = db.query(
@@ -105,52 +103,52 @@ public class ChoiceActivityProc extends AppCompatActivity {
         //перемещаем курсор на первую строку
         cursor1.moveToFirst();
 
+        //считывание данных из бд в recyclerView
+        int nameColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
+        int sDescColumnIndex = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
+        String currentName = cursor.getString(nameColumnIndex);
+        String currentSDesc = cursor1.getString(sDescColumnIndex);
 
-            int nameColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
-            int sDescColumnIndex = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
-            String currentName = cursor.getString(nameColumnIndex);
-            String currentSDesc = cursor1.getString(sDescColumnIndex);
-
-            recyclers.add(new Recycler(currentName, currentSDesc, R.drawable.i5_11400f));
-
-
-            cursor.moveToNext();
-            cursor1.moveToNext();
-            int nameColumnIndex2 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
-            int sDescColumnIndex2 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
-            String currentName2 = cursor.getString(nameColumnIndex2);
-            String currentSDesc2 = cursor1.getString(sDescColumnIndex2);
-            recyclers.add(new Recycler(currentName2, currentSDesc2, R.drawable.i9_12900k));
+        recyclers.add(new Recycler(currentName, currentSDesc, R.drawable.i5_11400f));
 
 
-            cursor.moveToNext();
-            cursor1.moveToNext();
-
-            int nameColumnIndex3 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
-            int sDescColumnIndex3 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
-            String currentName3 = cursor.getString(nameColumnIndex3);
-            String currentSDesc3 = cursor1.getString(sDescColumnIndex3);
-            recyclers.add(new Recycler(currentName3, currentSDesc3, R.drawable.i3_10100f));
-
-
-            cursor.moveToNext();
-            cursor1.moveToNext();
-
-            int nameColumnIndex4 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
-            int sDescColumnIndex4 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
-            String currentName4 = cursor.getString(nameColumnIndex4);
-            String currentSDesc4 = cursor1.getString(sDescColumnIndex4);
-            recyclers.add(new Recycler(currentName4, currentSDesc4, R.drawable.ryzen_5_5600x));
+        cursor.moveToNext();
+        cursor1.moveToNext();
+        int nameColumnIndex2 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
+        int sDescColumnIndex2 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
+        String currentName2 = cursor.getString(nameColumnIndex2);
+        String currentSDesc2 = cursor1.getString(sDescColumnIndex2);
+        recyclers.add(new Recycler(currentName2, currentSDesc2, R.drawable.i9_12900k));
 
 
-            cursor.moveToNext();
-            cursor1.moveToNext();
+        cursor.moveToNext();
+        cursor1.moveToNext();
 
-            int nameColumnIndex5 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
-            int sDescColumnIndex5 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
-            String currentName5 = cursor.getString(nameColumnIndex5);
-            String currentSDesc5 = cursor1.getString(sDescColumnIndex5);
-            recyclers.add(new Recycler(currentName5, currentSDesc5, R.drawable.ryzen_9_5900x));
+        int nameColumnIndex3 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
+        int sDescColumnIndex3 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
+        String currentName3 = cursor.getString(nameColumnIndex3);
+        String currentSDesc3 = cursor1.getString(sDescColumnIndex3);
+        recyclers.add(new Recycler(currentName3, currentSDesc3, R.drawable.i3_10100f));
+
+
+        cursor.moveToNext();
+        cursor1.moveToNext();
+
+        int nameColumnIndex4 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
+        int sDescColumnIndex4 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
+        String currentName4 = cursor.getString(nameColumnIndex4);
+        String currentSDesc4 = cursor1.getString(sDescColumnIndex4);
+        recyclers.add(new Recycler(currentName4, currentSDesc4, R.drawable.ryzen_5_5600x));
+
+
+        cursor.moveToNext();
+        cursor1.moveToNext();
+
+        int nameColumnIndex5 = cursor.getColumnIndex(DatabaseHelper.COLUMN_NAME);
+        int sDescColumnIndex5 = cursor1.getColumnIndex(DatabaseHelper.COLUMN_SDESC);
+        String currentName5 = cursor.getString(nameColumnIndex5);
+        String currentSDesc5 = cursor1.getString(sDescColumnIndex5);
+        recyclers.add(new Recycler(currentName5, currentSDesc5, R.drawable.ryzen_9_5900x));
 
 
         cursor.close();

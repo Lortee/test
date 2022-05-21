@@ -27,6 +27,7 @@ public class RecyclerAdapterProc extends RecyclerView.Adapter<RecyclerAdapterPro
     SQLiteDatabase db;
 
 
+    //конструктор
     RecyclerAdapterProc(Context context, List<Recycler> recyclers) {
         this.recyclers = recyclers;
         this.inflater = LayoutInflater.from(context);
@@ -47,7 +48,7 @@ public class RecyclerAdapterProc extends RecyclerView.Adapter<RecyclerAdapterPro
         holder.sDescView.setText(recycler.getsDesc());
 
 
-
+        //обрабатываем нажатие на кнопку "описание"
         final Context context = holder.buttonDesc.getContext();
         holder.buttonDesc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +104,13 @@ public class RecyclerAdapterProc extends RecyclerView.Adapter<RecyclerAdapterPro
 
                         break;
                 }
+                //запускаем экран
                 context.startActivity(intent);
             }
         });
 
 
-
+        //обрабатываем нажатие на кнопку "+"
         final Context context2 = holder.buttonPlus.getContext();
         holder.buttonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,6 +164,7 @@ public class RecyclerAdapterProc extends RecyclerView.Adapter<RecyclerAdapterPro
 
                         break;
                 }
+                //запускаем экран
                 context2.startActivity(intent);
             }
         });
@@ -188,6 +191,7 @@ public class RecyclerAdapterProc extends RecyclerView.Adapter<RecyclerAdapterPro
 
         ViewHolder(View view) {
             super(view);
+            //связываем элементы по id
             imageView = view.findViewById(R.id.im);
             nameView = view.findViewById(R.id.txtName);
             sDescView = view.findViewById(R.id.txtDesc);
@@ -196,12 +200,7 @@ public class RecyclerAdapterProc extends RecyclerView.Adapter<RecyclerAdapterPro
         }
     }
 
-    public void readDB(){
-        Cursor cursor;
-        Cursor cursor1;
-        Cursor cursor2;
 
-    }
 
 
 }
