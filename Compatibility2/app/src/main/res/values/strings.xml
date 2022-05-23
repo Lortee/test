@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Compatibility</string>
+    <string name="proc">Процессор</string>
+    <string name="ohl">Охлаждение процессора</string>
+    <string name="mom">Материнская плата</string>
+    <string name="choose">ВЫБРАТЬ</string>
+    <string name="mainName">Совместимость комплектующих компьютера</string>
+    <string name="name">Имя</string>
+    <string name="desc">Описание</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="desc2">Описание:</string>
+    <string name="back">Вернуться</string>
+    <string name="total">Проверить совместимость</string>
+    <string name="main">Выбрать комплектующие</string>
+    <string name="exit">Выйти</string>
+</resources>

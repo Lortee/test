@@ -1128,6 +1128,8 @@ public class MainActivity2 extends AppCompatActivity {
                 imOhl.setImageResource(R.drawable.deep200t);
 
 
+                imOhl.setImageResource(R.drawable.i5_11400f);
+
                 //закрываем курсоры
                 cursorName1.close();
                 cursorSDesc1.close();

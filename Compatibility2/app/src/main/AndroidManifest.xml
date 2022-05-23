@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".ChoiceActivityProc" />
         <activity android:name=".DescActivityProc" />
+        <activity android:name=".TotalActivity" />
         <activity android:name=".ChoiceActivityMom" />
         <activity android:name=".ChoiceActivityOhl" />
         <activity android:name=".DescActivityOhl" />
