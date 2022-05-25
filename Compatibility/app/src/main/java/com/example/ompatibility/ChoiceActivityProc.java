@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,7 +51,7 @@ public class ChoiceActivityProc extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        //вешаем слушателя на кнопку возврата на главный экран
+        //обрабатываем нажатие на кнопку возврата на главный экран
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,8 +60,22 @@ public class ChoiceActivityProc extends AppCompatActivity {
             }
         });
 
+        //разрешить навигацию вверх с помощью значка приложения на верхней панели
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
+
+    //обработка нажатия кнопки назад
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     //заполнение recyclerView
     private void setInitialData(){

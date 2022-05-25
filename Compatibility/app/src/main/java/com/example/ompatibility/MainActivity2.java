@@ -380,22 +380,21 @@ public class MainActivity2 extends AppCompatActivity {
 
 
                 //делаем проверку на совместимость
-                if (currentProcSock == currentMomSock && currentOhlPower - currentProcPower >= 35) {
-                    myDialogFragment.message = "Все совместимо!";
-                    myDialogFragment.show(manager, "myDialog");
-                } else if (currentProcSock != currentMomSock && !(currentOhlPower - currentProcPower >= 35)) {
-                    myDialogFragment.message = "Несовместимые коплектующие";
-                    myDialogFragment.show(manager, "myDialog");
-                } else if (currentProcSock != currentMomSock && currentOhlPower - currentProcPower >= 35) {
-                    myDialogFragment.message = "Процессор и материнская плата несовместимы";
-                    myDialogFragment.show(manager, "myDialog");
-                } else if (currentProcSock == 0 || currentMomSock == 0 || currentOhlPower == 0 || currentProcPower == 0) {
+                if (currentProcSock == 0 || currentMomSock == 0 || currentOhlPower == 0 || currentProcPower == 0) {
                     myDialogFragment.message = "Пожалуйста, выберите комплектующие";
                     myDialogFragment.show(manager, "myDialog");
-
-                } else {
-                    myDialogFragment.message = "Кулер и процессор несовместимы";
-                    myDialogFragment.show(manager, "myDialog");
+                }
+                else {
+                    if (currentProcSock == currentMomSock && currentOhlPower - currentProcPower >= 35) {
+                        myDialogFragment.message = "Все совместимо!";
+                        myDialogFragment.show(manager, "myDialog");
+                    } else if (currentProcSock != currentMomSock && !(currentOhlPower - currentProcPower >= 35)) {
+                        myDialogFragment.message = "Несовместимые коплектующие";
+                        myDialogFragment.show(manager, "myDialog");
+                    } else if (currentProcSock != currentMomSock && currentOhlPower - currentProcPower >= 35) {
+                        myDialogFragment.message = "Процессор и материнская плата несовместимы";
+                        myDialogFragment.show(manager, "myDialog");
+                    }
                 }
 
                 //закрываем курсоры и бд
