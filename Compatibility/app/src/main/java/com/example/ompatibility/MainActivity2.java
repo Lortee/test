@@ -394,6 +394,9 @@ public class MainActivity2 extends AppCompatActivity {
                     } else if (currentProcSock != currentMomSock && currentOhlPower - currentProcPower >= 35) {
                         myDialogFragment.message = "Процессор и материнская плата несовместимы";
                         myDialogFragment.show(manager, "myDialog");
+                    }else if (currentProcSock == currentMomSock && !(currentOhlPower - currentProcPower >= 35)) {
+                        myDialogFragment.message = "Кулер и процессор несовместимы";
+                        myDialogFragment.show(manager, "myDialog");
                     }
                 }
 
